@@ -2,6 +2,8 @@ from account.decorators import login_required
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+
+from .decorators import user_is_post_author
 from .models import Post
 from .forms import PostForm
 from . import APP_NAME
@@ -26,6 +28,7 @@ def new(request):
 
 
 @login_required
+@user_is_post_author
 def edit(request, id):
     obj = get_object_or_404(Post, id=id)
     form = PostForm(instance=obj)
