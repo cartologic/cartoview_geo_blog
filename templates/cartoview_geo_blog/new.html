@@ -1,0 +1,36 @@
+{% extends "app_manager/app_install_base.html" %}
+{% load bootstrap_tags staticfiles %}
+{% load i18n %}
+{% load static %}
+{% block title %} {{ block.super }} - {% trans "Applications" %} {% endblock %}
+
+{% block body_class %}appinstances appinstances-list explore{% endblock %}
+{% block head %}
+    {% include "geonode/ext_header.html" %}
+    {% include "geonode/app_header.html" %}
+    {{ block.super }}
+{% endblock %}
+{% block body %}
+    <div class="page-header">
+        <h2>{% trans "New Post" %}</h2>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit"/>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+{% block extra_script %}
+
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}
+
+

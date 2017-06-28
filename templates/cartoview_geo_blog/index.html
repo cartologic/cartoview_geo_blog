@@ -1,0 +1,49 @@
+{% extends "app_manager/app_install_base.html" %}
+{% load bootstrap_tags staticfiles %}
+{% load i18n avatar_tags %}
+{% load static %}
+{% block title %} {{ block.super }} - {% trans "Applications" %} {% endblock %}
+
+{% block body_class %}appinstances appinstances-list explore{% endblock %}
+{% block head %}
+    {% include "geonode/ext_header.html" %}
+    {% include "geonode/app_header.html" %}
+    {{ block.super }}
+    <style>
+        .panel-body p img {
+            border-radius: 50%
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="page-header">
+        <p><span style="font-size: x-large;font-weight: bold;">{% trans "Posts" %}</span><a class="btn btn-primary btn-sm pull-right" href="{% url 'cartoview_geo_blog.new' %}">Create New</a></p>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            {% for post in posts %}
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ post.title }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p> author: {{ post.author.username }}</p>
+                            <p>Created at: {{ post.ctime }}</p>
+                            <p><a href="{{ post.get_absolute_url }}" class="btn btn-primary pull-right">View</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <h3>No Posts For Now</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block extra_script %}
+
+{% endblock %}
+
+

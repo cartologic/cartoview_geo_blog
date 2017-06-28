@@ -1,0 +1,61 @@
+{% extends "app_manager/app_install_base.html" %}
+{% load bootstrap_tags staticfiles %}
+{% load i18n %}
+{% load static %}
+{% block title %} {{ block.super }} - {% trans "Applications" %} {% endblock %}
+
+{% block body_class %}appinstances appinstances-list explore{% endblock %}
+{% block head %}
+    {% include "geonode/ext_header.html" %}
+    {% include "geonode/app_header.html" %}
+    {{ block.super }}
+{% endblock %}
+{% block body %}
+    <div class="page-header">
+
+        <p><span style="font-size: x-large;font-weight: bold;">{{ post.title }}</span><a
+                class="btn btn-primary btn-sm pull-right" href="{% url 'cartoview_geo_blog.edit' post.id %}">edit</a>
+        </p>
+
+        <span class="badge">{{ post.ctime }}</span> <span
+            class="badge">author: {{ post.author.username }}</span>
+    </div>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            {{ post.content|safe }}
+        </div>
+    </div>
+    {% if post.comments %}
+        <div class="container" id="disqus_thread"></div>
+    {% endif %}
+
+{% endblock %}
+{% block extra_script %}
+    {% if post.comments %}
+        <script>
+
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+            var disqus_config = function () {
+                var disqus_shortname = 'cartologic';
+                this.page.identifier = "post-{{ post.id }}";
+            };
+
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//cartologic.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+    {% endif %}
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}
+
+
