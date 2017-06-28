@@ -38,3 +38,5 @@ CKEDITOR_CONFIGS = {
         # 'codeSnippet_theme': 'tomorrow-night-eighties',
     },
 }
+TEMPLATES[0]["OPTIONS"]['context_processors'] += (
+    'cartoview_geo_blog.context_processors.blog_latest',)
