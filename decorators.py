@@ -11,3 +11,5 @@ def user_is_post_author(function):
             return function(request, *args, **kwargs)
         else:
             raise PermissionDenied
+
+    return wrap
