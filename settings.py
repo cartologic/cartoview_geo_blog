@@ -12,8 +12,8 @@ CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',
-        'height': 400,
-        'width': 900,
+        'height': 'auto',
+        'width': 'auto',
         'toolbar_Full': [
             {'name': 'document',
              'items': ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Templates']},
