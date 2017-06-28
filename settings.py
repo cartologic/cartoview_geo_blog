@@ -39,4 +39,5 @@ CKEDITOR_CONFIGS = {
     },
 }
 TEMPLATES[0]["OPTIONS"]['context_processors'] += (
-    'cartoview_geo_blog.context_processors.blog_latest',)
+    'cartoview_geo_blog.context_processors.blog_latest','cartoview_geo_blog.context_processors.posts_panel')
+POSTS_PANEL = False
