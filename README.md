@@ -1,2 +1,2 @@
 # cartoview_geo_blog
-Create Dynamic Pages and Pusblish you Contents & Chat with users about contents using Cartoview Geo Blog.
+Create a blog page with apps, publish your app(s) as a blog entry,  allowing users to follow and comment on your apps
