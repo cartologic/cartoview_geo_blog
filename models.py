@@ -1,3 +1,4 @@
+from cartoview.app_manager.models import AppInstance
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.core.urlresolvers import reverse_lazy
 from django.db import models
@@ -5,6 +6,7 @@ from geonode.people.models import Profile
 
 
 class Post(models.Model):
+    app = models.ForeignKey(AppInstance, related_name='posts', null=True, blank=True)
     title = models.CharField(max_length=100)
     content = RichTextUploadingField('contents')
     author = models.ForeignKey(Profile, related_name='posts')

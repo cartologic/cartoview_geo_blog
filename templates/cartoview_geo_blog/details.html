@@ -9,6 +9,13 @@
     {% include "geonode/ext_header.html" %}
     {% include "geonode/app_header.html" %}
     {{ block.super }}
+    <style>
+        .responsive-iframe {
+            height: 'auto';
+            resize: both;
+            min-height: 500px;
+        }
+    </style>
 {% endblock %}
 {% block body %}
     <div class="page-header">
@@ -22,7 +29,9 @@
     </div>
     <div id="page-wrapper">
         <div class="container-fluid">
-            <!-- Page Heading -->
+            {% if post.app %}
+                <iframe class="responsive-iframe col-xs 12 col-sm-12 col-md-12" src="{{ post.app.get_absolute_url }}"></iframe>
+            {% endif %}
             {{ post.content|safe }}
         </div>
     </div>
