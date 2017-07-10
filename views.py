@@ -6,7 +6,6 @@ from cartoview.app_manager.models import AppInstance
 from django.shortcuts import get_object_or_404
 from .decorators import user_is_post_author
 from .models import Post
-from .forms import PostForm
 from . import APP_NAME
 
 

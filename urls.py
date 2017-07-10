@@ -11,6 +11,3 @@ urlpatterns = patterns('',
                        url(r'^(?P<id>[\d]+)/view/$', views.details, name='post-details'),
 
                        )
-carto_urls += patterns('',
-                       url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-                       )
