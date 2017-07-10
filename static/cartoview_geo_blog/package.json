@@ -45,6 +45,7 @@
     "react-dom": "^15.6.1",
     "react-image": "^1.0.1",
     "react-paginate": "^4.4.3",
+    "react-spinkit": "^3.0.0",
     "tcomb-form": "^0.9.17"
   }
 }
