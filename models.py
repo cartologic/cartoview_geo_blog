@@ -24,3 +24,6 @@ class Post(models.Model):
         verbose_name = 'post'
         verbose_name_plural = 'posts'
         ordering = ['-ctime', '-updated']
+
+class CustomUser(models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False)

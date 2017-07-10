@@ -1,0 +1,27 @@
+{% extends "app_manager/app_install_base.html" %}
+{% load bootstrap_tags staticfiles %}
+{% load i18n %}
+
+{% block title %} {{ block.super }} - {% trans "GeoBlog" %} {% endblock %}
+{% block head %}
+    {% include "geonode/ext_header.html" %}
+    {% include "geonode/app_header.html" %}
+    {{ block.super }}
+{% endblock %}
+{% block body %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div id="root"></div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block extra_script %}
+    <script src="{{STATIC_URL}}cartoview_geo_blog/vendor/ckeditor/ckeditor.js"></script>
+    <script src="{{ STATIC_URL }}cartoview_geo_blog/dist/geoBlog.bundle.js"></script>
+    <script>
+    var instance= {{instance|safe}}
+    var viewer=new Viewer('root',{'resources_url':"/api/appinstances",'limit':9,'instance':instance});
+    viewer.view();
+    </script>
+{% endblock %}

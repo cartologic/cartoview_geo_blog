@@ -30,7 +30,8 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             {% if post.app %}
-                <iframe class="responsive-iframe col-xs 12 col-sm-12 col-md-12" src="{{ post.app.get_absolute_url }}"></iframe>
+                <iframe class="responsive-iframe col-xs 12 col-sm-12 col-md-12"
+                        src="{% url ''|add:post.app.app.name|add:'.view' post.app.id %}"></iframe>
             {% endif %}
             {{ post.content|safe }}
         </div>
@@ -66,5 +67,3 @@
     <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 {% endblock %}
-
-

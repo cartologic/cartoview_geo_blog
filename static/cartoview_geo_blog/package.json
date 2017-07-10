@@ -1,0 +1,50 @@
+{
+  "name": "cartoview_geo_blog",
+  "version": "1.0.0",
+  "description": "General purpose map viewer with only the essential compoonents for navigation and display. Optimized for mobile. Using Openlayers 3 and Boundless SDK.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p --progress",
+    "dev": "webpack -d --config webpack.config-dev.js --watch --progress --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cartologic/cartoview_geo_blog.git"
+  },
+  "keywords": [
+    "Blog"
+  ],
+  "author": "Hisham Karam",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/cartologic/cartoview_geo_blog/issues"
+  },
+  "homepage": "https://github.com/cartologic/cartoview_geo_blog#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "file-loader": "^0.11.1",
+    "json-loader": "^0.5.4",
+    "path": "^0.12.7",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.18.0",
+    "webpack": "^3.1.0",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "events": "^1.1.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-image": "^1.0.1",
+    "react-paginate": "^4.4.3",
+    "tcomb-form": "^0.9.17"
+  }
+}
