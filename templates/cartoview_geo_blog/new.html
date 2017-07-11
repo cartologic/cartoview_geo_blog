@@ -23,4 +23,10 @@
     var viewer=new Viewer('root',{'resources_url':"/api/appinstances",'limit':9,'post':undefined});
     viewer.view();
     </script>
+    <script>
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+
 {% endblock %}

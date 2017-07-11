@@ -76,7 +76,7 @@ export default class ResourceViewer extends Component {
             <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8 resource-box-text">
               <ul className="list-group">
                 <li className="list-group-item">title: {app.title}</li>
-                <li className="list-group-item">abstract: {app.abstract}</li>
+                <li className="list-group-item">abstract: { app.abstract.length>30 ? app.abstract.substr(0,30)+'...' : app.abstract }</li>
                 <li className="list-group-item">owner: {app.owner}</li>
                 <li className="list-group-item">{'App: '}{app.app.title}</li>
               </ul>
