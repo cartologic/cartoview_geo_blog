@@ -1,4 +1,4 @@
-from account.decorators import login_required
+from allauth.account.decorators import login_required
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
 from django.http import JsonResponse,HttpResponseBadRequest
